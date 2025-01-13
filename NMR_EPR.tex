@@ -1,0 +1,80 @@
+\documentclass[xcolor]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{babel}
+\usepackage{csquotes}
+\usepackage[sorting=none,giveninits=true]{biblatex}
+\addbibresource{bibliography.bib}
+\usepackage{float}
+\usepackage{xcolor}  % kolory motywu
+\usepackage{tikz}
+\usetikzlibrary{angles}
+\usetikzlibrary{quotes}
+\usetikzlibrary{decorations.pathreplacing}
+\usetikzlibrary{calligraphy}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{calc}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\pgfplotsset{compat=1.9}
+\usepackage{amsmath}  % równania
+\usepackage{amssymb}
+\usepackage{bbold}
+\usepackage{physics2}  % pochodne, macierze itp
+\usephysicsmodule{ab}
+\usephysicsmodule{diagmat}
+\usephysicsmodule{xmat}
+\usephysicsmodule{nabla.legacy}
+\usephysicsmodule{op.legacy}
+\usefonttheme[onlymath]{serif}
+\makeatletter
+%\newcommand\vb[1]{\@ifstar\boldsymbol\mathbf{#1}}
+\newcommand\vb[1]{\@ifstar\boldsymbol\mathbf{#1}}
+\newcommand\va[1]{\@ifstar{\vec{#1}}{\vec{\mathrm{#1}}}}
+\newcommand\vu[1]{%
+\@ifstar{\hat{\boldsymbol{#1}}}{\hat{\boldsymbol{#1}}}}
+\makeatother
+\usepackage{fixdif, derivative}  % pochodne
+\usepackage[version=4]{mhchem}
+\title{}
+\author{Rafał Staroszczyk}
+\date{Electron Paramagnetic Resonance \\ and \\ Nuclear Magnetic Resonance}
+\usetheme{Hannover}
+\usecolortheme{spruce}
+
+\DeclareMathOperator{\Col}{Col}
+\DeclareMathOperator{\Nul}{Nul}
+\DeclareMathOperator{\arctg}{arctg}
+\DeclareMathOperator{\tgh}{tgh}
+
+
+\setlength{\abovedisplayskip}{0pt}
+\setlength{\belowdisplayskip}{0pt}
+\setlength{\abovedisplayshortskip}{0pt}
+\setlength{\belowdisplayshortskip}{0pt}
+
+\newcommand{\inv}[1]{\frac{1}{#1}}
+
+\begin{document}
+\maketitle
+\begin{frame}{Table of Contenst}
+\tableofcontents
+\end{frame}
+
+\section{Magnetic resonance spectroscopy}
+\begin{frame}{Magnetic resonance spectroscopy}
+\begin{block}{Common characterisics}
+\begin{enumerate}
+\item both methods utilize magnetic dipole moment related to spin
+\item external magnetic field splits energy levels
+\item 
+\end{enumerate}
+\end{block}
+
+Inserting sample in a strong magnetic field splits the energy levels due to Zeeman effect.
+%rys11.58 pigon
+\end{frame}
+
+
+
+\end{document}
