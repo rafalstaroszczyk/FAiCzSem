@@ -27,15 +27,18 @@
 \usephysicsmodule{nabla.legacy}
 \usephysicsmodule{op.legacy}
 \usefonttheme[onlymath]{serif}
+%\usepackage{package}
 \makeatletter
 %\newcommand\vb[1]{\@ifstar\boldsymbol\mathbf{#1}}
-\newcommand\vb[1]{\@ifstar\boldsymbol\mathbf{#1}}
+\newcommand\vb[1]{\boldsymbol{#1}}
+%\newcommand\vb[1]{\@ifstar\boldsymbol\mathbf{#1}}
 \newcommand\va[1]{\@ifstar{\vec{#1}}{\vec{\mathrm{#1}}}}
 \newcommand\vu[1]{%
 \@ifstar{\hat{\boldsymbol{#1}}}{\hat{\boldsymbol{#1}}}}
 \makeatother
 \usepackage{fixdif, derivative}  % pochodne
 \usepackage[version=4]{mhchem}
+\usepackage{siunitx}
 \title{}
 \author{Rafał Staroszczyk}
 \date{Electron Paramagnetic Resonance \\ and \\ Nuclear Magnetic Resonance}
@@ -57,22 +60,47 @@
 
 \begin{document}
 \maketitle
-\begin{frame}{Table of Contenst}
+\begin{frame}{Table of Contents}
 \tableofcontents
 \end{frame}
 
 \section{Magnetic resonance spectroscopy}
 \begin{frame}{Magnetic resonance spectroscopy}
-\begin{block}{Common characterisics}
-\begin{enumerate}
-\item both methods utilize magnetic dipole moment related to spin
-\item external magnetic field splits energy levels
-\item 
-\end{enumerate}
+\begin{block}{Common characteristics}
+	\begin{enumerate}
+		\item both methods utilize magnetic dipole moment related to spin
+		\item external constant magnetic field splits energy levels
+		\item oscillating magnetic field causes transitions
+	\end{enumerate}
 \end{block}
 
-Inserting sample in a strong magnetic field splits the energy levels due to Zeeman effect.
-%rys11.58 pigon
+\begin{block}{Differences}
+	\begin{enumerate}
+		\item EPR uses electron spin, NMR uses nucleus spin
+		\item electron's magnetic dipole moment is $\approx 1000$ times larger than proton's
+		\item EPR requires $\qty{1}{\tesla}$, NMR requires $\qty{20}{\tesla}$
+		\item EPR operates on microwave frequencies, NMR on radio frequencies
+	\end{enumerate}
+\end{block}
+\end{frame}
+
+\begin{frame}
+	Particles with angular momentum are magnetic dipoles with moment:
+	\begin{align*}
+		\vb{\mu}_{J} &= \gamma_{J} \vb{J} & \vab{\vb{J}} &= \hbar\sqrt{J\pab{J+1}} & J_{z} &= \hbar m_{J}.
+	\end{align*}
+	For electrons we can separate angular and spin momenta:
+	\begin{align*}
+		\vb{\mu}_{l} &= \frac{\mu_B}{\hbar} \vb{L} \\
+		\vb{\mu}_{s} &= g_e\frac{\mu_B}{\hbar} \vb{S} \\
+		\mu_B &= \frac{e\hbar}{2 m_e} \approx \qty{5.788e-5}{\eV.\tesla^{-1}}.
+	\end{align*}
+	
+	
+	
+	
+	Inserting sample in a strong magnetic field splits the energy levels due to Zeeman effect.
+	%rys11.58 pigon
 \end{frame}
 
 
