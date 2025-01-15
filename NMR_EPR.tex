@@ -4,7 +4,7 @@
 \usepackage{babel}
 \usepackage{csquotes}
 \usepackage[sorting=none,giveninits=true]{biblatex}
-\addbibresource{bibliography.bib}
+\addbibresource{Bibliography.bib}
 \usepackage{float}
 \usepackage{xcolor}  % kolory motywu
 \usepackage{tikz}
@@ -39,9 +39,11 @@
 \usepackage{fixdif, derivative}  % pochodne
 \usepackage[version=4]{mhchem}
 \usepackage{siunitx}
-\title{}
+\usepackage{booktabs}
+\usepackage{makecell}
+\title{Electron Paramagnetic Resonance \\ and \\ Nuclear Magnetic Resonance}
 \author{Rafał Staroszczyk}
-\date{Electron Paramagnetic Resonance \\ and \\ Nuclear Magnetic Resonance}
+\date{}
 \usetheme{Hannover}
 \usecolortheme{spruce}
 
@@ -77,7 +79,7 @@
 \begin{block}{Differences}
 	\begin{enumerate}
 		\item EPR uses electron spin, NMR uses nucleus spin
-		\item electron's magnetic dipole moment is $\approx 1000$ times larger than proton's
+		\item electron's magnetic dipole moment is $\approx 2000$ times larger than proton's
 		\item EPR requires $\qty{1}{\tesla}$, NMR requires $\qty{20}{\tesla}$
 		\item EPR operates on microwave frequencies, NMR on radio frequencies
 	\end{enumerate}
@@ -95,14 +97,66 @@
 		\vb{\mu}_{s} &= g_e\frac{\mu_B}{\hbar} \vb{S} \\
 		\mu_B &= \frac{e\hbar}{2 m_e} \approx \qty{5.788e-5}{\eV.\tesla^{-1}}.
 	\end{align*}
-	
-	
-	
-	
-	Inserting sample in a strong magnetic field splits the energy levels due to Zeeman effect.
-	%rys11.58 pigon
+	\begin{align*}
+		U_{I} &= -g_{I}\mu_{N}m_{I}B_{0} & U_{S} &= g_{e}\mu_{B}m_{S}B_{0} \\
+		U_{I}^{\pab{2}} - U_{I}^{\pab{1}} &= g_{I}\mu_{N}B_{0} = h\nu_{p} & U_{S}^{\pab{2}} - U_{S}^{\pab{1}} &= g_{S}\mu_{B}B_{0} = h\nu_{e}
+	\end{align*}
 \end{frame}
 
+\begin{frame}
+Inserting sample in a strong magnetic field splits the energy levels due to Zeeman effect.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{"pigon_1158_1159_p".png}
+		\caption{Energy splitting in magnetic field \cite{pigon}}
+	\end{figure}
+\end{frame}
 
+\section{Nuclear Magnetic Resonance}
+\begin{frame}{Continuous Wave Spectroscopy}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.5\textwidth]{"pigon_1160_p".png}
+		\caption{Bloch NMR spectrometer \cite{pigon}}
+	\end{figure}
+	\begin{align*}
+		\nu &= \qtyrange[range-phrase=-]{100}{800}{\MHz} \\
+		B &= \qtyrange[range-phrase=-]{10}{20}{\tesla}
+	\end{align*}
+\end{frame}
 
+\section{Electron Paramagnetic Resonance}
+\begin{frame}{Wavebands}
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{
+		>{\centering}p{2cm}
+		S[table-column-width=2cm]
+		S[table-column-width=2cm]
+		S[table-column-width=2cm]}
+		\toprule
+		{Band} & {\makecell{Frequency \\ $\bab{\unit{\GHz}}$}} & {\makecell{Wavelength \\ $\bab{\unit{\cm}}$}} & {\makecell{Magnetic \\ induction $\bab{\unit{\tesla}}$}} \\
+		\midrule
+		S & 3.0 & 10    & 0.107 \\
+		X & 9.5 & 3.15  & 0.339 \\
+		K & 23  & 1.30  & 0.82  \\
+		Q & 25  & 0.86  & 1.25  \\
+		W & 95  & 0.315 & 3.3   \\
+		\bottomrule
+		\end{tabular}
+		\caption{EPR wavebands \cite{pigon}}
+	\end{table}
+\end{frame}
+
+\begin{frame}{EPR Spectrometer}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{"pigon_1161_p".png}
+		\caption{EPR Spectrometer \cite{pigon}}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Bibliography}
+	\printbibliography
+\end{frame}
 \end{document}
